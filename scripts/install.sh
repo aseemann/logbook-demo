@@ -12,4 +12,6 @@ docker-compose pull
 docker-compose build
 docker-compose up -d
 
+sleep 30
+
 ./import-db.sh

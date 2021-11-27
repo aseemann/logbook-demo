@@ -2,12 +2,18 @@
     "name": "axel-kummer/logbook-demo",
     "description": "Logbook demo project",
     "type": "project",
+    "repositories": [
+        {
+            "type": "github",
+            "url": "git@github.com:aseemann/php-livelog.git"
+        }
+    ],
     "require": {
         "typo3/cms": "8.7.*",
         "axel-kummer/aku-logbook": "^1.0",
-        "helhum/typo3-console": "^5.8",
         "typo3/cms-introduction": "^3.0",
-        "aseemann/logbook-simplefe": "dev-master"
+        "aseemann/logbook-simplefe": "dev-master",
+        "aseemann/php-livelog": "dev-master"
     },
     "authors": [
         {
@@ -20,9 +26,14 @@
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
             "web-dir": "docroot"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.34"
         },
-        "helhum/typo3-console": {
-            "install-extension-dummy": "0"
+        "preferred-install": {
+            "aseemann/*": "source"
         }
     },
     "prefer-stable" : true

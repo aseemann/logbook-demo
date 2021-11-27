@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.2-apache
 
 RUN apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade
 RUN apt-get install -y \
@@ -15,7 +15,7 @@ RUN apt-get install -y \
             ghostscript \
             libjpeg62 \
             imagemagick
-RUN docker-php-ext-install -j$(nproc) iconv mcrypt \
+RUN docker-php-ext-install -j$(nproc) iconv \
  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
  && docker-php-ext-install -j$(nproc) gd \
  && docker-php-ext-install mysqli pdo pdo_mysql zip soap sockets opcache exif
@@ -37,3 +37,4 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get autoclean -y && apt-get autoremove -y
 
 COPY setup/php/ /usr/local/etc/php/
+COPY rootfs/ /
