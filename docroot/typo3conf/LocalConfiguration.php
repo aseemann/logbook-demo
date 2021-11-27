@@ -58,7 +58,10 @@ return [
     ],
     'EXTCONF' => [
         'lang' => [
-            'availableLanguages' => [],
+            'availableLanguages' => [
+                'fr',
+                'de',
+            ],
         ],
     ],
     'FE' => [
@@ -102,6 +105,9 @@ return [
         'devIPmask' => '*',
         'displayErrors' => 1,
         'enableDeprecationLog' => 'file',
+        'enable_DLOG' => true,
+        'enable_errorDLOG' => true,
+        'enable_exceptionDLOG' => true,
         'encryptionKey' => 'b6079a07b9a261ef8f052ae6c909c75ebcf0966aec49cb8e56bf5fd3b64defacd264e5ba3c05efe55e2a11004fd3fd31',
         'exceptionalErrors' => 28674,
         'isInitialDatabaseImportDone' => true,
