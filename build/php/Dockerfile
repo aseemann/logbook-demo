@@ -14,7 +14,9 @@ RUN apt-get install -y \
             locales-all \
             ghostscript \
             libjpeg62 \
-            imagemagick
+            imagemagick \
+            git \
+            wget
 
 RUN docker-php-ext-install -j$(nproc) iconv \
  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
@@ -34,7 +36,6 @@ RUN echo C.UTF-8 UTF-8 >> /etc/locale.gen \
  && echo de_DE.UTF-8 UTF-8 >> /etc/locale.gen \
  && locale-gen
 
-RUN apt-get install wget -y
 RUN wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q \
     | php -- --quiet --install-dir=/usr/bin --filename=composer
 

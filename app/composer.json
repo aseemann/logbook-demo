@@ -40,10 +40,15 @@
             "ln -sfT ../vendor/aseemann/php-livelog/web docroot/livelog",
             "ln -sfT docroot html"
         ],
+        "create-dirs": [
+            "mkdir -m 2775 docroot/typo3temp || :"
+        ],
         "post-install-cmd": [
+            "@create-dirs",
             "@set-symlinks"
         ],
         "post-update-cmd": [
+            "@create-dirs",
             "@set-symlinks"
         ]
     }

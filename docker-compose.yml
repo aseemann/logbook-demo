@@ -8,6 +8,7 @@ services:
       - ./persistent/fileadmin:/var/www/docroot/fileadmin
     environment:
       - TYPO3_CONTEXT=Development
+      - COMPOSER_AUTH
     networks:
       - default
 
