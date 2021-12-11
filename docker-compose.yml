@@ -4,19 +4,18 @@ services:
     build:
       context: ./build/php
     volumes:
-      - ./docroot:/var/www/html
-      - .:/var/www
-    links:
-      - db:db
+      - ./app:/var/www
+      - ./persistent/fileadmin:/var/www/docroot/fileadmin
     environment:
       - TYPO3_CONTEXT=Development
     networks:
       - default
+
   db:
-    image: mariadb:10.1
+    image: mariadb:10.2
     volumes:
-      - db:/var/lib/mysql
-      - ./database-dump.sql:/var/data/database-dump.sql
+      - ./persistent/database:/var/lib/mysql
+      - ./data/:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE
@@ -24,7 +23,6 @@ services:
       - MYSQL_PASSWORD
     networks:
       - default
-volumes:
-  db:
+
 networks:
   default:

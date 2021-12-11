@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
-cd $( dirname "${BASH_SOURCE[0]}" )
 
-set -ex
-
-cd ..
-
-composer install --ignore-platform-reqs
-
-docker-compose down -v
-docker-compose pull
 docker-compose build
+docker-compose run --rm -w /var/www php composer install
+
+tar -xzf data/fileadmin.tar.gz --directory persistent
+
+docker-compose run --rm php bash -c "chown :www-data fileadmin -R && chmod g+w fileadmin -R"
 docker-compose up -d
 
-sleep 30
-
-./import-db.sh
