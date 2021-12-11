@@ -27,6 +27,7 @@ return [
             'beuser' => 'a:0:{}',
             'bootstrap_package' => 'a:7:{s:16:"disablePageTsRTE";s:1:"0";s:27:"disablePageTsBackendLayouts";s:1:"0";s:20:"disablePageTsTCEMAIN";s:1:"0";s:20:"disablePageTsTCEFORM";s:1:"0";s:30:"disablePageTsTtContentPreviews";s:1:"0";s:36:"disablePageTsNewContentElementWizard";s:1:"0";s:21:"disableLessProcessing";s:1:"0";}',
             'context_help' => 'a:0:{}',
+            'documentation' => 'a:0:{}',
             'felogin' => 'a:0:{}',
             'filemetadata' => 'a:0:{}',
             'fluid_styled_content' => 'a:0:{}',
