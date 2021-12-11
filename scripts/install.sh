@@ -5,6 +5,6 @@ docker-compose run --rm -u $(id -u) -w /var/www php composer install
 
 tar -xzf data/fileadmin.tar.gz --directory persistent
 
-docker-compose run --rm php bash -c "chown :www-data fileadmin typo3temp -R && chmod g+w fileadmin typo3temp -R"
+docker-compose run --rm -w /var/www php bash -c "chown www-data:www-data * -R && chmod g+w * -R"
 docker-compose up -d
 

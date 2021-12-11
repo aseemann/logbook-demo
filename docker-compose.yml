@@ -9,6 +9,7 @@ services:
     environment:
       - TYPO3_CONTEXT=Development
       - COMPOSER_AUTH
+      - COMPOSER_HOME=/var/www
     networks:
       - default
 

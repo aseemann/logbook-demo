@@ -16,6 +16,8 @@ RUN apt-get install -y \
             libjpeg62 \
             imagemagick \
             git \
+            zip \
+            unzip \
             wget
 
 RUN docker-php-ext-install -j$(nproc) iconv \
