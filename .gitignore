@@ -9,6 +9,7 @@ persistent/fileadmin/*
 
 !app/docroot/
 app/docroot/*
+!app/docroot/.htaccess
 !app/docroot/typo3conf/
 app/docroot/typo3conf/*
 !app/docroot/typo3conf/LocalConfiguration.php

@@ -1,0 +1,4 @@
+make build:             Build a new version of the runtime image
+make up:                start the docker stack
+make down:              stop the docker stack remove the containers, networks and volumes
+make install:           install the demo application
